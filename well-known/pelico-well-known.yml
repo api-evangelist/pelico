@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of /.well-known/* on Pelico hosts
+hosts:
+- host: https://www.pelico.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://trust.pelico.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+notes: >-
+  No /.well-known/ discovery documents are published on the Pelico web hosts.
+  Pelico ships no public developer API, OIDC/OAuth authorization server, or
+  api-catalog surface; absence is the expected, honest result.

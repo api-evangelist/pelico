@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+probe: true
+source: https://trust.pelico.ai/
+url: https://trust.pelico.ai/
+certifications:
+- SOC 2 Type II
+- ISO 27001:2022
+- GDPR
+evidence:
+- source: https://trust.pelico.ai/
+  keywords:
+  - soc 2 type 2
+  - iso 27001
+  - trust center
+  - gdpr
+notes: >-
+  Trust center powered by Bastion; publishes SOC 2 Type II report, ISO
+  27001:2022 certificate, and GDPR documentation (3 compliance documents, 239
+  tracked security controls). SOC 2 Type II confirmed on the trust page and
+  Pelico platform pages.

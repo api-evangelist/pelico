@@ -1,7 +1,32 @@
 aid: pelico
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pelico.png
 name: Pelico
-description: Pelico is a company surfaced as a portfolio company of general-catalyst and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Pelico is a manufacturing orchestration platform that bridges the execution
+  gap between planning and real-world production. It unifies data from
+  suppliers, production, inventory, quality, maintenance, and customers into a
+  single operational view across multi-level BOMs and multi-plant networks.
+  Domain-specific AI agents continuously monitor disruptions, determine upstream
+  and downstream impact, simulate recovery options (alternates, stock transfers,
+  resequencing), and keep cross-functional teams synchronized in real time.
+  Pelico integrates with major ERP systems (SAP, Oracle, Infor) and cloud
+  providers (AWS, Azure, Google Cloud), exposing APIs to ingest new data sources
+  and push actions into existing enterprise systems. The company is SOC 2 Type
+  II and ISO 27001:2022 certified and GDPR compliant. This profile is maintained
+  in the API Evangelist network; Pelico is a portfolio company of General
+  Catalyst and does not publish a public developer API, portal, or OpenAPI at
+  this time — its API surface is enterprise integration only.
 url: https://raw.githubusercontent.com/api-evangelist/pelico/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +36,47 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Manufacturing
+- Supply Chain
+- Orchestration
+- Artificial Intelligence
+- Operations
+- ERP Integration
+- Manufacturing Execution
 apis: []
+common:
+- type: TrustCenter
+  url: security/pelico-trust-center.yml
+- type: DomainSecurity
+  url: security/pelico-domain-security.yml
+- type: Website
+  url: https://www.pelico.ai/
+- type: Documentation
+  url: https://www.pelico.ai/platform
+- type: Compliance
+  url: https://trust.pelico.ai/
+- type: PrivacyPolicy
+  url: https://www.pelico.ai/legal/privacy-policy
+- type: TermsOfService
+  url: https://www.pelico.ai/legal/legal-notice
+- type: Blog
+  url: https://www.pelico.ai/resources/our-articles
+- type: Support
+  url: https://www.pelico.ai/contact
+- type: SignUp
+  url: https://www.pelico.ai/contact
+- type: LLMsTxt
+  url: llms/pelico-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1
