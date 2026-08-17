@@ -36,7 +36,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-17'
 tags:
 - Company
 - Manufacturing
@@ -70,13 +70,40 @@ common:
   url: https://www.pelico.ai/contact
 - type: LLMsTxt
   url: llms/pelico-llms.txt
+- type: Plans
+  url: plans/pelico-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/pelico-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 x-enrichment:
-  date: '2026-07-20'
-  status: enriched
-  artifacts_added: 8
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 2
   pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Pelico's platform page markets "APIs to ingest new data sources and push
+    actions into existing enterprise systems", but there is no reference behind
+    it — /docs, /developers, /api-docs and /pricing all 404, every conventional
+    API subdomain (api, docs, developers, app, mcp) under pelico.ai is NXDOMAIN,
+    and the 172-URL sitemap routes every API question to the /contact form.
+  evidence:
+  - url: https://www.pelico.ai/platform
+    status: 200
+  - url: https://www.pelico.ai/developers
+    status: 404
+  - url: https://www.pelico.ai/api-docs
+    status: 404
+  - url: https://www.pelico.ai/llms.txt
+    status: 404
+  - url: https://www.pelico.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://www.pelico.ai/contact
+    status: 200
+  checked: '2026-08-17'

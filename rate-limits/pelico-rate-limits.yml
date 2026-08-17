@@ -1,0 +1,30 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.pelico.ai/platform
+docs: null
+limit_count: 0
+limits: []
+headers: []
+retry_after: null
+exhaustion_status: null
+evidence:
+- url: https://www.pelico.ai/platform
+  status: 200
+  note: >-
+    States "APIs to ingest new data sources and push actions into existing
+    enterprise systems without disruption" — the only public mention of an API
+    surface, with no limits, quotas, or throttling behavior attached.
+- url: https://www.pelico.ai/docs
+  status: 404
+- url: https://www.pelico.ai/developers
+  status: 404
+- url: https://www.pelico.ai/api-docs
+  status: 404
+notes: >-
+  No rate limits are published. Pelico ships no public developer reference of
+  any kind, so there is no documented window, quota, burst allowance, response
+  header (X-RateLimit-*, RateLimit-*, Retry-After) or exhaustion status code to
+  record. limit_count is an honest zero: the limits may well exist inside
+  customer deployments, but nothing about them is reachable without a sales
+  engagement. An integrator cannot plan retry or backoff behavior from anything
+  Pelico publishes.

@@ -1,16 +1,98 @@
-generated: '2026-07-20'
-method: searched
-source: live probes of /.well-known/* on Pelico hosts
+generated: '2026-08-17'
+method: probed
+source: live HTTPS probes of /.well-known/* and discovery paths on every Pelico host
 hosts:
 - host: https://www.pelico.ai
+  note: >-
+    Primary web property. pelico.ai and www.pelico.io both resolve/redirect here.
   documents:
   - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /openapi.yaml
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /api-docs
+    status: 404
+  - path: /graphql
+    status: 404
+  - path: /mcp
+    status: 404
+- host: https://www.pelico.io
+  note: 302s to https://www.pelico.ai/ at the root; serves 404 on every probe path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
     status: 404
 - host: https://trust.pelico.ai
+  note: Bastion-hosted trust center.
   documents:
   - path: /.well-known/security.txt
     status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+- host: https://careers.pelico.io
+  note: >-
+    Applicant-tracking host on a Pelico-controlled subdomain (third-party ATS
+    origin). The only 200 llms.txt anywhere on Pelico infrastructure — it is an
+    ATS-generated index of open job postings, not a product or API document.
+  documents:
+  - path: /llms.txt
+    status: 200
+    file: null
+    content: job-listing index (ATS-generated); jobs.md + jobs.json JSON Feed offered
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /openapi.json
+    status: 404
+nxdomain:
+- api.pelico.ai
+- app.pelico.ai
+- docs.pelico.ai
+- developers.pelico.ai
+- developer.pelico.ai
+- help.pelico.ai
+- support.pelico.ai
+- status.pelico.ai
+- platform.pelico.ai
+- auth.pelico.ai
+- login.pelico.ai
+- mcp.pelico.ai
+- api.pelico.io
+- app.pelico.io
+pointer_emitted: false
 notes: >-
-  No /.well-known/ discovery documents are published on the Pelico web hosts.
-  Pelico ships no public developer API, OIDC/OAuth authorization server, or
-  api-catalog surface; absence is the expected, honest result.
+  No /.well-known/ discovery document is served on any Pelico host. Every
+  conventional API-host subdomain (api., docs., developers., app., mcp.) is
+  NXDOMAIN, so there is no separate API origin to probe. The single 200 is an
+  ATS-generated llms.txt on careers.pelico.io listing open roles; it carries no
+  product, API, or agent information. Per pipeline rule, NO WellKnown or
+  SecurityTxt pointer is emitted from this file — it records a verified absence,
+  not a served surface.

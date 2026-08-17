@@ -1,0 +1,30 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.pelico.ai/for-ai-assistants
+docs: https://www.pelico.ai/contact
+plan_count: 0
+currency: null
+plans: []
+pricing_model: >-
+  Modular SaaS subscription. Pelico's own AI-assistant page states pricing is
+  based on connected sites, number of users, and data volume, with multi-site
+  pricing available on request. No tier names, no unit prices, no included
+  quotas, and no overage rates are published anywhere on the public site.
+evidence:
+- url: https://www.pelico.ai/pricing
+  status: 404
+- url: https://www.pelico.ai/for-ai-assistants
+  status: 200
+  note: names the pricing dimensions (sites, users, data volume) but no figures
+- url: https://www.pelico.ai/contact
+  status: 200
+  note: the only route to a quote
+- url: https://www.pelico.ai/sitemap.xml
+  status: 200
+  note: 172 URLs, none of which is a pricing or plans page
+notes: >-
+  Enterprise contact-sales only. There is no pricing page in the sitemap and
+  /pricing 404s, so plan_count is an honest zero rather than an omission. A
+  buyer cannot self-serve a price, and an agent has nothing machine-readable to
+  compare. This is recorded, not inferred: the pricing dimensions above are
+  quoted from Pelico's own published page.
