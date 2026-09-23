@@ -1,0 +1,27 @@
+# Front Door AI Index — pelico — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: pelico
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.pelico.ai
+  final_host: www.pelico.ai
+  ownership: own
+  owner: pelico
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 11
+  host_score: 11
+  density: 11.84
+  words: 929
+  tiers:
+    agentic: 2
+    core: 9
+    model: 0
+  ambiguous: 9
+  top_terms:
+    AI: 9
+    agent: 9
+    AI agent: 2
